@@ -7,7 +7,7 @@ Taking a knock at the publication mentioned below:
 
 What is the problem this publication is trying to solve?
 * Recommendation engine for a large-scale marketplace
-* Recommending similar products to consumer based on behavior
+* Recommending similar products to consumer based on behavior (bid page redirect vs item landing from search page)
 
 Key ideas:
 * Personalization of recommendation based on the user search behavior
