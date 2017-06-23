@@ -1,5 +1,6 @@
 ## Recommendation engine for a marketplace
 
+[![Build Status](https://travis-ci.org/nikhilRP/recommendation_engine.svg?branch=master)](https://travis-ci.org/nikhilRP/recommendation_engine)
 
 Taking a knock at the publication mentioned below:
 
