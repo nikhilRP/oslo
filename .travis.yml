@@ -1,0 +1,16 @@
+language: python
+python:
+  - 3.4
+
+services:
+  - docker
+
+install:
+  - docker-compose build
+
+before_script:
+  - pip install nose
+  - pip install requests
+
+script:
+  - docker-compose run --rm web py.test
