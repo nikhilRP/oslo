@@ -9,8 +9,7 @@ install:
   - docker-compose build
 
 before_script:
-  - pip install nose
-  - pip install requests
+  - pip install -r web/requirements.txt
 
 script:
-  - docker-compose run --rm web py.test
+  - py.test web/
