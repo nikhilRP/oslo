@@ -52,7 +52,7 @@
 
 1. Index page - http://{docker-ip}/
     - Should have details about search terms used to generate clusters and associated clusters.
-2.  Elasticsearch index creation -  http://{docker-ip}/cluster-data?index=true
+2.  Elasticsearch index creation -  http://{docker-ip}/cluster_listings?index=true
     - Triggers indexing of all the listings and then does clustering
     - NOTE: Takes a while to finish (20 to 25 mins)
     - Not using flag "index=true" uses existing index to cluster the search term results http://{docker-ip}/cluster-data
@@ -69,3 +69,15 @@
     - Since the search engine is not mature enough it is advisable to seperate concerns and not mix search personalization with recommendations personalization
 5. Remove duplicate clusters
 6. Fine tune ranking function
+
+### Cluster visualizations
+
+**Sample visualizations of the clusters**
+
+1. Link to the visualization - http://{docker-ip}/?term=golf%205%20gti
+
+![img_golf](https://github.com/nikhilRP/oslo/tree/master/img/cluster1.jpg)
+
+2. Link to the visualization - http://{docker-ip}/?term=bmw%201%20series
+
+![img_golf](https://github.com/nikhilRP/oslo/tree/master/img/cluster4.jpg)

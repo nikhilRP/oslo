@@ -1,4 +1,5 @@
 import csv
+import json
 
 from es import get_es
 
@@ -109,9 +110,38 @@ class Cluster(object):
         return clusters
 
     def start_clustering(self):
+        # clustering only top 100 queries
         queries = self._parse_queries()[:100]
         all_clusters = dict()
         for query in queries:
             search_results = self._get_search_results_for_query(query)
             all_clusters[query] = self._cluster(list(set(search_results)))
-        return all_clusters
+
+        with open('data/clusters.json', 'w') as fp:
+            json.dump(all_clusters, fp)
+
+        return {'status': 'Done clustering items'}
+
+
+class LoadClusters(object):
+    """ Parse clusters.json file and provide
+    """
+
+    def __init__(self):
+        with open('data/clusters.json') as data_file:
+            self.clusters = json.load(data_file)
+
+    def get_queries(self):
+        return {'queries': list(self.clusters.keys())}
+
+    def get_clusters(self, query):
+        clusters = self.clusters.get(query, None)
+        results = {'name': query, 'children': list()}
+        for cluster in clusters:
+            if cluster.endswith('keywords') or cluster == 'score':
+                continue
+            results['children'].append({
+                'name': cluster,
+                'children': [{'name': key} for key in clusters[cluster]]
+            })
+        return results

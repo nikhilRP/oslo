@@ -4,7 +4,7 @@ import time
 from config import BaseConfig
 from flask import Flask, render_template, g, jsonify, request
 
-from cluster import Cluster
+from cluster import Cluster, LoadClusters
 from data_loaders.base import Loader
 
 app = Flask(__name__)
@@ -13,7 +13,11 @@ app.config.from_object(BaseConfig)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    response = {'application': "OSLO, a recommendation engine"}
+    term = request.args.get('term', '')
+    if term == '':
+        response = LoadClusters().get_queries()
+    else:
+        response = LoadClusters().get_clusters(term)
     if request.args.get('format', '') == 'json':
         return jsonify(**response)
     return render_template('index.html', data=response)
