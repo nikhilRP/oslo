@@ -13,18 +13,18 @@ What is OSLO?
 
 **What is been implemented in this code repo?**
 
-* Create search engine for items available. This is done using elasticsearch and indexing all listing titles in it.
-* Use top queries provided and get the results.
-  - Construct query (might be multiple words) including fuzziness and then get the desired results for top 100 search terms
-* Cluster the results using K-Means clustering
-  - Removed duplicate results
-  - Vectorize the results using TF-IDF
-  - Reduce dimensions using SVD
-  - Select K (number of clusters) by maximizing silhouette score
-  - Index listings and keywords for a given clusters
-* Use seed item to construct the query and query the top 5 clusters
-* Use ranking function (simple boosting in elasticsearch) to order the recommendations
-* Display top 10 recommendations
+1. Create search engine for items available. This is done using elasticsearch and indexing all listing titles in it.
+2. Use top queries provided and get the results.
+    * Construct query (might be multiple words) including fuzziness and then get the desired results for top 100 search terms
+3. Cluster the results using K-Means clustering
+    * Removed duplicate results
+    * Vectorize the results using TF-IDF
+    * Reduce dimensions using SVD
+    * Select K (number of clusters) by maximizing silhouette score
+    * Index listings and keywords for a given clusters
+4. Use seed item to construct the query and query the top 5 clusters
+5. Use ranking function (simple boosting in elasticsearch) to order the recommendations
+6. Display top 10 recommendations
 
 ##### NOTE: Since no quality metrics are provided work is still not completed
 
