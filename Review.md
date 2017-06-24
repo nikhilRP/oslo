@@ -1,6 +1,6 @@
-Taking a knock at the publication mentioned below:
+### Recommending Similar Items in Large-scale Online Marketplaces
 
-#### Recommending Similar Items in Large-scale Online Marketplaces (https://pdfs.semanticscholar.org/e107/0c60d926e69298263e9ca36c698b69a21914.pdf)
+[Link for the publication](https://pdfs.semanticscholar.org/e107/0c60d926e69298263e9ca36c698b69a21914.pdf)
 
 What is the problem this publication is trying to solve?
 * Recommendation engine for a large-scale marketplace
