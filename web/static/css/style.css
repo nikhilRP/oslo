@@ -1,0 +1,259 @@
+@font-face {
+    font-family:'Biome-MeteoGroup';
+    src:url(https://cdn.meteogroup.com/assets/brand/fonts/5b5b4343-eb9a-4739-8dc2-8119c0b3635e.eot?#iefix);
+    src:url(https://cdn.meteogroup.com/assets/brand/fonts/5b5b4343-eb9a-4739-8dc2-8119c0b3635e.eot?#iefix) format("eot"),url(https://cdn.meteogroup.com/assets/brand/fonts/e7803599-adb1-4ae0-bc3e-3435fcea59b9.woff) format("woff"),url(https://cdn.meteogroup.com/assets/brand/fonts/add08d0e-5dc8-45e3-a024-7ae80451ff5a.ttf) format("truetype"),url(https://cdn.meteogroup.com/assets/brand/fonts/037afcfe-b984-4377-8cfc-d60d76b07b18.svg#037afcfe-b984-4377-8cfc-d60d76b07b18) format("svg");
+    font-weight:400;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'UnitWebPro-Regular';
+    src:url(https://cdn.meteogroup.com/assets/brand/fonts/UnitWebPro-Light.eot);
+    src:url(https://cdn.meteogroup.com/assets/brand/fonts/UnitWebPro-Light.woff) format("woff");
+}
+
+@font-face {
+    font-family:'UnitWebPro-Bold';
+    src:url(https://cdn.meteogroup.com/assets/brand/fonts/UnitWebPro-Bold.eot);
+    src:url(https://cdn.meteogroup.com/assets/brand/fonts/UnitWebPro-Bold.woff) format("woff");
+}
+
+* {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  color: #132c45;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: url("https://cdn.meteogroup.com/assets/brand/images/beta.png") no-repeat right top;
+  background-color: #fff;
+
+}
+
+table {
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  padding: 8px;
+  font-weight: bold;
+}
+
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+table.forecast {
+  font-family: 'UnitWebPro-Regular', Helvetica, Arial, sans-serif;
+  font-size: 0.6em;
+}
+
+body {
+  width: 85%;
+  margin: auto;
+  font-family: 'UnitWebPro-Regular', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  padding-bottom: 80px;
+}
+
+svg.nvd3-svg {
+    border:1px solid #00b0ca;
+    background-color: #fdfdfd;
+}
+
+.nv-point {
+    stroke-opacity: 1!important;
+    stroke-width: .1px!important;
+    fill-opacity: 1!important;
+}
+
+
+code {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 20px 0;
+  display: block;
+  text-align: left;
+  background-color: #86bf13;
+  border-radius: 10px;
+  line-height: 2em;
+}
+
+code cite {
+  font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Biome-MeteoGroup', sans-serif;
+  color: #00b0ca;
+}
+
+h1 {
+  font-size: 3em;
+  padding: 80px 0px 40px 80px;
+  margin: 0 0 20px 0;
+  text-align: right;
+  border-bottom: 1px solid #00b0ca;
+}
+
+h2 {
+  font-size: 1.4em;
+  margin: 0;
+  padding: 30px 0 10px 0;
+}
+
+h3 {
+  font-size: 1.0em;
+  margin: 0;
+  padding: 30px 0 0px 0;
+}
+
+p {
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4em;
+}
+
+ul, ol{
+  margin:4px 0;
+}
+
+li {
+  line-height:1.4em;
+}
+
+a {
+  text-decoration: none;
+  color: #ed185f;
+  font-family: 'UnitWebPro-Bold', Helvetica, Arial, sans-serif;
+  white-space: nowrap;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.copy {
+  width: 100%;
+  text-align: center;
+}
+
+.copy img {
+  margin: 0 auto;
+
+}
+
+.right{
+  padding: 0 0 20px 20px;
+  text-align: center;
+}
+
+.content-left {
+  width: 63%;
+  margin-right: 2%;
+  display: inline-block;
+}
+
+.content-top {
+  border-bottom: 1px solid #00b0ca;
+  padding-left: 4%;
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.content-right {
+  border-left: 1px solid #00b0ca;
+  padding-left: 4%;
+  width: 33%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.content-bottom {
+  border-top: 1px solid #00b0ca;
+  padding-top: 40px;
+  margin-top: 20px;
+}
+
+.red {
+  color: #ed185f;
+}
+
+.blue {
+  color: #00b0ca;
+}
+
+.dashed {
+      stroke-dasharray: 5,5;
+}
+.
+.dashedline {
+      stroke-dasharray: 1,5;
+}
+.info {
+    padding: 6px 8px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.info h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.legend {
+    color: #555;
+}
+
+.colorbar {
+    line-height: 1px;
+    border: 1px solid #000000;
+    width: 20px;
+    height: 123px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.colorbar entry {
+    width: 18px;
+    height: 1px;
+    float: left;
+    opacity: 0.7;
+}
+
+.colorbar tick {
+    width: 4px;
+    height: 1px;
+    background: black;
+    float: right;
+    opacity: 1.0;
+}
+
+.labels {
+    float: right;
+    margin-left: 5px;
+}
+
+.embed-wrapper {
+    width: 33%;
+    height: 300px;
+    margin: auto;
+    float: left;
+}
