@@ -2,12 +2,12 @@
 
 [![Build Status](https://travis-ci.org/nikhilRP/recommendation_engine.svg?branch=master)](https://travis-ci.org/nikhilRP/recommendation_engine)
 
-What is OSLO?
+### What is OSLO?
 * POC implementation of a recommendation engine for a large-scale marketplace. Named after the coffeeshop where it was built, they do have great coffee :)
 * Based tentatively on the paper - Recommending Similar Items in Large-scale Online Marketplaces
 * My view on the publication - [click here](https://github.com/nikhilRP/recommendation_engine/blob/master/Review.md)
 
-#### NOTE: It is just a POC and is hacked over the weekend most likely with excess coffee and beer intake. So please do not use it for any serious purposes.
+#### NOTE: It is just a POC and has been hacked over the weekend, most likely with excess coffee and beer intake. So please do not use it for any serious purposes.
 
 ### Implementation
 
@@ -16,7 +16,7 @@ What is OSLO?
 1. Create search engine for items available. This is done using elasticsearch and indexing all listing titles in it.
 2. Use top queries provided and get the results.
     * Construct query (might be multiple words) including fuzziness and then get the desired results for top 100 search terms
-3. Cluster the results using K-Means clustering
+3. Cluster the results for each search term using K-Means clustering
     * Removed duplicate results
     * Vectorize the results using TF-IDF
     * Reduce dimensions using SVD
@@ -63,7 +63,9 @@ What is OSLO?
 
 1. Write tests
 2. Make infrastructure scalable
-3. Use online clustering preferably Online agglomerative clustering to update the clusters on the fly (would be really useful for short lived items and avoids cold-start problem)
+    - Move to Spark so that it can scale the cluster creation
+3. Use online clustering preferably Online agglomerative clustering (https://arxiv.org/abs/1704.01858) to update the clusters on the fly (would be ideal for short lived items and avoids cold-start problem)
 4. Make clustering independent of search personalization
+    - Since the search engine is not mature enough it is advisable to seperate concerns and not mix search personalization with recommendations personalization
 5. Remove duplicate clusters
 6. Fine tune ranking function
