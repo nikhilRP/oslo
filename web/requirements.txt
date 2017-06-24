@@ -15,3 +15,4 @@ numpy==1.11.2
 scipy==0.18.1
 pandas==0.19.2
 scikit-learn==0.18.2
+fuzzywuzzy==0.15.0

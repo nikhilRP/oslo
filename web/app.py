@@ -2,7 +2,10 @@ import logging
 import time
 
 from config import BaseConfig
-from flask import Flask, render_template, g, jsonify
+from flask import Flask, render_template, g, jsonify, request
+
+from cluster import Cluster
+from data_loaders.base import Loader
 
 app = Flask(__name__)
 app.config.from_object(BaseConfig)
@@ -10,15 +13,31 @@ app.config.from_object(BaseConfig)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return jsonify(**{'Name': "Bond, James Bond"})
+    response = {'application': "OSLO, a recommendation engine"}
+    if request.args.get('format', '') == 'json':
+        return jsonify(**response)
+    return render_template('index.html', data=response)
 
 
-@app.route('/index_data', methods=['GET', 'POST'])
-def index_data():
-    from data_loaders.base import Loader
-    data = Loader('data/za_sample_listings_incl_cat.csv').index_items()
-    app.logger.info(data)
-    return jsonify(**{'item_count': data})
+@app.route('/cluster_listings', methods=['GET', 'POST'])
+def cluster_listings():
+    if request.args.get('index', '') == 'true':
+        Loader('data/za_sample_listings_incl_cat.csv').index_items()
+
+    clusters = Cluster(
+        'data/za_queries_sample.csv').start_clustering()
+
+    if request.args.get('format', '') == 'json':
+        return jsonify(**clusters)
+    return render_template('index.html', data=clusters)
+
+
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    response = Loader('data/za_sample_listings_incl_cat.csv').index_items()
+    if request.args.get('format', '') == 'json':
+        return jsonify(**response)
+    return render_template('index.html', data=response)
 
 
 @app.before_first_request
