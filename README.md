@@ -69,6 +69,8 @@
     - Since the search engine is not mature enough it is advisable to seperate concerns and not mix search personalization with recommendations personalization
 5. Remove duplicate clusters
 6. Fine tune ranking function
+7. Remove duplicate listings from the same user
+8. Tune dimensions for reduction
 
 ### Cluster visualizations
 
