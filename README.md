@@ -76,12 +76,12 @@
 
 1. Link to the visualization - http://{docker-ip}/?term=golf%205%20gti
 
-![img_golf](https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster1.png)
+![img_golf](https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster1.png =400px)
 
 2. Link to the visualization - http://{docker-ip}/?term=bmw%201%20series
 
-![img_bmw](https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster4.png)
+![img_bmw](https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster4.png =400px)
 
-3. 2. Link to the visualization - http://{docker-ip}/?term=toyota%20hilux
+3. Link to the visualization - http://{docker-ip}/?term=toyota%20hilux
 
-![img_toyota](https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster3.png)
+![img_toyota](https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster3.png =400px)
