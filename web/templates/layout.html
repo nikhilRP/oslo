@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    {% block head %}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>OSLO | Recommendation engine</title>
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static',filename='css/style.css') }}" media="all">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.4/nv.d3.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"
+            charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.4/nv.d3.min.js"></script>
+    {% endblock %}
+</head>
+<body>
+<h1>OSLO<p style="text-align: right;color: #00b0ca;font-size: 20px">Recommendation engine</p>
+</h1>
+<div class="content">{% block content %}{% endblock %}</div>
+<div class="content-footer">
+    {% block footer %}
+    {% endblock %}
+</div>
+</body>
+
+</html>
