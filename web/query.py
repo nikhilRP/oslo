@@ -1,4 +1,4 @@
-from elasticsearch import get_es
+from es import get_es
 
 
 class Query(object):

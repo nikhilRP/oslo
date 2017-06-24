@@ -1,6 +1,6 @@
 import csv
 
-from elasticsearch import get_es
+from es import get_es
 
 from sklearn import metrics
 from sklearn.cluster import KMeans

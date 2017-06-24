@@ -1,6 +1,6 @@
 import csv
 
-from elasticsearch import get_es
+from es import get_es
 
 __index_name__ = 'engine'
 __doc_type__ = 'listing'
@@ -50,8 +50,11 @@ class Loader(object):
         """ Index titles in elasticsearch
         """
         for row in self._parse_file():
-            self.es.index(
-                index=__index_name__, doc_type=__doc_type__,
-                body={'item_id': row[1], 'title': row[3]}
-            )
+            try:
+                self.es.index(
+                    index=__index_name__, doc_type=__doc_type__,
+                    body={'item_id': row[1], 'title': row[3]}
+                )
+            except:
+                continue
         return self.es.count(index=__index_name__, doc_type=__doc_type__)
