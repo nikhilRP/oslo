@@ -10,7 +10,7 @@ class Query(object):
         self.es = get_es()
 
     def _select_clusters(self):
-        pass
+        self.es.search(index='engine', doc_type='cluster')
 
     def _ranking_function(self):
         pass

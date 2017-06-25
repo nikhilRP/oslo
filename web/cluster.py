@@ -160,7 +160,16 @@ def index_clusters():
     es.indices.put_mapping(
         index=__index_name__, doc_type=__c_doc_type__, body={
             __c_doc_type__: {
-                'properties': {}
+                'properties': {
+                    'keywords': {
+                        "type": "string",
+                        "position_increment_gap": 100
+                    },
+                    'items': {
+                        "type": "string",
+                        "position_increment_gap": 100
+                    }
+                }
             }
         })
     clusters = LoadClusters()

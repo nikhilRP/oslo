@@ -4,7 +4,7 @@ import time
 from config import BaseConfig
 from flask import Flask, render_template, g, jsonify, request
 
-from cluster import Cluster, LoadClusters, index_clusters
+from cluster import Cluster, LoadClusters
 from data_loaders.base import Loader
 
 app = Flask(__name__)
@@ -27,10 +27,8 @@ def index():
 def cluster_listings():
     if request.args.get('index', '') == 'true':
         Loader('data/za_sample_listings_incl_cat.csv').index_items()
-
     clusters = Cluster(
         'data/za_queries_sample.csv').start_clustering()
-
     if request.args.get('format', '') == 'json':
         return jsonify(**clusters)
     return render_template('index.html', data=clusters)
@@ -38,10 +36,9 @@ def cluster_listings():
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    response = Loader('data/za_sample_listings_incl_cat.csv').index_items()
-    if request.args.get('format', '') == 'json':
-        return jsonify(**response)
-    return render_template('index.html', data=response)
+    response = {
+        'Status': 'Final piece of the puzzle is still under construction'}
+    return jsonify(**response)
 
 
 @app.before_first_request
