@@ -1,6 +1,6 @@
 ## OSLO
 
-[![Build Status](https://travis-ci.org/nikhilRP/recommendation_engine.svg?branch=master)](https://travis-ci.org/nikhilRP/recommendation_engine)
+[![Build Status](https://travis-ci.org/nikhilRP/oslo.svg?branch=master)](https://travis-ci.org/nikhilRP/oslo)
 
 ### What is OSLO?
 * POC implementation of a recommendation engine for a large-scale marketplace. Named after the coffeeshop where it was built, they do have great coffee :)
