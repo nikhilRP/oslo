@@ -12,6 +12,7 @@ from sklearn.preprocessing import Normalizer
 
 __index_name__ = 'engine'
 __doc_type__ = 'listing'
+__c_doc_type__ = 'cluster'
 
 
 class Cluster(object):
@@ -119,7 +120,7 @@ class Cluster(object):
 
         with open('data/clusters.json', 'w') as fp:
             json.dump(all_clusters, fp)
-
+        index_clusters()
         return {'status': 'Done clustering items'}
 
 
@@ -140,9 +141,39 @@ class LoadClusters(object):
         for cluster in clusters:
             if cluster.endswith('keywords') or cluster == 'score':
                 continue
+            for c in clusters:
+                if cluster + ':keywords' == c:
+                    keywords = clusters[c]
             results['children'].append({
                 'name': cluster,
-                'children': [{'name': key} for key in clusters[cluster]]
+                'children': [{'name': key} for key in clusters[cluster]],
+                'keywords': keywords
             })
         results['queries'] = self.get_queries()['queries']
         return results
+
+
+def index_clusters():
+    """ Index clusters in elasticsearch
+    """
+    es = get_es()
+    es.indices.put_mapping(
+        index=__index_name__, doc_type=__c_doc_type__, body={
+            __c_doc_type__: {
+                'properties': {}
+            }
+        })
+    clusters = LoadClusters()
+    for query in clusters.get_queries()['queries']:
+        results = clusters.get_clusters(query)['children']
+        for result in results:
+            listings = list()
+            for child in result['children']:
+                listings.append(child['name'])
+            doc = {
+                'name': '{query}-{cluster}'.format(
+                    query=query, cluster=result['name']),
+                'keywords': result['keywords'],
+                'items': listings
+            }
+            es.index(index=__index_name__, doc_type=__c_doc_type__, body=doc)

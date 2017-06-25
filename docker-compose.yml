@@ -19,7 +19,7 @@ web:
   volumes:
     - /usr/src/app/static
   env_file: .env
-  command: /usr/local/bin/gunicorn -w 2 -t 300000 -b :8000 app:app
+  command: /usr/local/bin/gunicorn -w 1 -t 300000 -b :8000 app:app
   links:
     - elasticsearch
 
