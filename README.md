@@ -45,6 +45,10 @@
 
 ### Run the web app
 
+  **NOTE: If you want to index and cluster listings, move the data files "za_sample_listings_incl_cat.csv" and "za_queries_sample.csv" to "web/data" directory. It is optional though, you can visualize and run queries on preprocessed clusters.**
+
+  Run the web app using the command:
+
     docker-compose stop && docker-compose up --force-recreate --build
 
 
@@ -71,6 +75,11 @@
 6. Fine tune ranking function
 7. Remove duplicate listings from the same user
 8. Tune dimensions for reduction
+9. Implement A/B testing in a combination of naive information retrieval engine vs recommendation engine
+10. Metrics to watch out would be similar to what's mentinoed in the paper
+    * Click through rate
+    * Watch through rate
+    * Processing load
 
 ### Cluster visualizations
 
@@ -78,12 +87,12 @@
 
 1. Link to the visualization - http://{docker-ip}/?term=golf%205%20gti
 
-<img src="https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster1.png" width="600"/>
+      <img src="https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster1.png" width="600"/>
 
 2. Link to the visualization - http://{docker-ip}/?term=bmw%201%20series
 
-<img src="https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster4.png" width="600" />
+      <img src="https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster4.png" width="600" />
 
 3. Link to the visualization - http://{docker-ip}/?term=toyota%20hilux
 
-<img src="https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster3.png" width="600" />
+      <img src="https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster3.png" width="600" />
