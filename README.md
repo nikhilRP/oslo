@@ -84,15 +84,18 @@
 ### Cluster visualizations
 
 **Sample visualizations of the clusters**
+2. Link to the visualization - http://{docker-ip}/?term=term=golf%204
 
-1. Link to the visualization - http://{docker-ip}/?term=golf%205%20gti
+      <img src="https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster5.png" width="600"/>
+
+2. Link to the visualization - http://{docker-ip}/?term=golf%205%20gti
 
       <img src="https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster1.png" width="600"/>
 
-2. Link to the visualization - http://{docker-ip}/?term=bmw%201%20series
+3. Link to the visualization - http://{docker-ip}/?term=bmw%201%20series
 
       <img src="https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster4.png" width="600" />
 
-3. Link to the visualization - http://{docker-ip}/?term=toyota%20hilux
+4. Link to the visualization - http://{docker-ip}/?term=toyota%20hilux
 
       <img src="https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster3.png" width="600" />
