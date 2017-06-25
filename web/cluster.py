@@ -124,7 +124,7 @@ class Cluster(object):
 
 
 class LoadClusters(object):
-    """ Parse clusters.json file and provide
+    """ Parse clusters.json file and retrieve term clusters
     """
 
     def __init__(self):
@@ -144,4 +144,5 @@ class LoadClusters(object):
                 'name': cluster,
                 'children': [{'name': key} for key in clusters[cluster]]
             })
+        results['queries'] = self.get_queries()['queries']
         return results
