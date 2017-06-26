@@ -84,7 +84,8 @@
 ### Cluster visualizations
 
 **Sample visualizations of the clusters**
-2. Link to the visualization - http://{docker-ip}/?term=term=golf%204
+
+1. Link to the visualization - http://{docker-ip}/?term=term=golf%204
 
       <img src="https://raw.githubusercontent.com/nikhilRP/oslo/master/img/cluster5.png" width="600"/>
 
