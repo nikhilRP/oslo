@@ -11,7 +11,7 @@ flasgger==0.5.14
 
 # data processing and machine learning libraries
 elasticsearch==5.4.0
-numpy==1.11.2
+numpy==1.21.0
 scipy==0.18.1
 pandas==0.19.2
 scikit-learn==0.18.2
